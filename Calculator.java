@@ -1,55 +1,54 @@
-package com.example.demo;
-
 public class Calculator {
-    private double op1;
-    private double op2;
-    private char operand;
-    private double result;
 
-    public double getOp1() {
+
+    private int op1;
+    private int op2;
+    private char operator;
+    private int result;
+
+    public void calculate(){
+        if(this.operator=='+'){
+            this.result=this.op1+this.op2;
+        }
+        if(this.operator=='-'){
+            this.result=this.op1-this.op2;
+        }
+        if(this.operator=='*'){
+            this.result=this.op1*this.op2;
+        }
+        if(this.operator=='/'){
+            if (this.op2 == 0) {
+                throw new ArithmeticException("Cannot divide by zero");
+            }
+            this.result=this.op1/this.op2;
+        }
+    }
+    public int getOp1() {
         return op1;
     }
 
-    public void setOp1(double op1) {
+    public void setOp1(int op1) {
         this.op1 = op1;
     }
-
-    public double getOp2() {
+    public int getOp2() {
         return op2;
     }
 
-    public void setOp2(double op2) {
+    public void setOp2(int op2) {
         this.op2 = op2;
     }
-
-    public char getOperand() {
-        return operand;
+    public char getOperator() {
+        return operator;
     }
 
-    public void setOperand(char operand) {
-        this.operand = operand;
+    public void setOperator(char operator) {
+        this.operator = operator;
     }
-
-    public double getResult() {
+    public int getResult() {
         return result;
     }
 
-    public void calculate(){
-
-        if(this.operand == '+'){
-            this.result = this.op1 + this.op2;
-        }
-
-        if(this.operand == '-') {
-            this.result = this.op1 - this.op2;
-        }
-
-        if(this.operand == '/') {
-            this.result = this.op1 / this.op2;
-        }
-
-        if(this.operand == 'x') {
-            this.result = this.op1 * this.op2;
-        }
+    public void setResult(int result) {
+        this.result = result;
     }
 }
