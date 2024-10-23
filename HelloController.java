@@ -1,96 +1,130 @@
-package com.example.demo;
+package com.example.calculator;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class HelloController {
-
     Calculator calc = new Calculator();
     @FXML
-    private TextField text;
-    private void onClickBut1(){
-        String val = text.getText();
+    private TextField Resulttxt;
+
+    @FXML
+    private void buttonone() {
+        String val = Resulttxt.getText();
         val = val + "1";
-        text.setText(val);
+        Resulttxt.setText(val);
 
     }
 
     @FXML
-    private void onClickBut2(){
-        String val = text.getText();
+    private void buttontwo() {
+        String val = Resulttxt.getText();
         val = val + "2";
-        text.setText(val);
+        Resulttxt.setText(val);
 
     }
+
     @FXML
-    private void onClickBut3(){
-        String val = text.getText();
+    private void buttonthree() {
+        String val = Resulttxt.getText();
         val = val + "3";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
+
     @FXML
-    private void onClickBut4(){
-        String val = text.getText();
+    private void buttonfour() {
+        String val = Resulttxt.getText();
         val = val + "4";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
+
     @FXML
-    private void onClickBut5(){
-        String val = text.getText();
+    private void buttonfive() {
+        String val = Resulttxt.getText();
         val = val + "5";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
 
     @FXML
-    private void onClickBut6(){
-        String val = text.getText();
+    private void buttonsix() {
+        String val = Resulttxt.getText();
         val = val + "6";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
 
     @FXML
-    private void onClickBut7(){
-        String val = text.getText();
+    private void buttonseven() {
+        String val = Resulttxt.getText();
         val = val + "7";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
 
     @FXML
-    private void onClickBut8(){
-        String val = text.getText();
+    private void buttoneight() {
+        String val = Resulttxt.getText();
         val = val + "8";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
 
     @FXML
-    private void onClickBut9(){
-        String val = text.getText();
+    private void buttonnine() {
+        String val = Resulttxt.getText();
         val = val + "9";
-        text.setText(val);
+        Resulttxt.setText(val);
+
     }
 
     @FXML
-    private void onClickBut0(){
-        String val = text.getText();
+    private void buttonzero() {
+        String val = Resulttxt.getText();
         val = val + "0";
-        text.setText(val);
-    }
-    @FXML
-    private void onPlusClick(){
-        String op1 = text.getText();
-        text.setText("");
-
-        calc.setOp1( Integer.parseInt(op1) );
-        calc.setOperand('+');
+        Resulttxt.setText(val);
 
     }
+
     @FXML
-    private void onEqualClick(){
-        String op2 = text.getText();
-        calc.setOp2( Integer.parseInt(op2) );
+    private void buttonminus() {
+        String op1 = Resulttxt.getText();
+        calc.setOp1(Integer.parseInt(op1));
+        calc.setOperator('-');
+        Resulttxt.clear();
+    }
+    @FXML
+    private void buttonmulti() {
+        String op1 = Resulttxt.getText();
+        calc.setOp1(Integer.parseInt(op1));
+        calc.setOperator('*');
+        Resulttxt.clear();
+    }
+    @FXML
+    private void buttonplus() {
+        String op1 = Resulttxt.getText();
+        calc.setOp1(Integer.parseInt(op1));
+        calc.setOperator('+');
+        Resulttxt.clear();
+    }
+    @FXML
+    private void buttondiv() {
+        String op1 = Resulttxt.getText();
+        calc.setOp1(Integer.parseInt(op1));
+        calc.setOperator('/');
+        Resulttxt.clear();
+    }
+    @FXML
+    private void buttonequals() {
+        String op2 = Resulttxt.getText();
+        calc.setOp2(Integer.parseInt(op2));
         calc.calculate();
-        text.setText("" +  calc.getResult() );
-
+        Resulttxt.setText("" + calc.getResult());
+    }
+    @FXML
+    private void buttonclear() {
+        Resulttxt.clear();
     }
 }
